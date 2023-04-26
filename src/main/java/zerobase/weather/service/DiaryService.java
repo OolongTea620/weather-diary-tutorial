@@ -12,11 +12,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+import zerobase.weather.WeatherApplication;
 import zerobase.weather.domain.DateWeather;
 import zerobase.weather.domain.Diary;
 import zerobase.weather.repository.DateWeatherRepository;
@@ -32,6 +35,8 @@ public class DiaryService {
 
     private final DateWeatherRepository dateWeatherRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(
+        WeatherApplication.class);
     public DiaryService(DiaryRepository diaryRepository,
         DateWeatherRepository dateWeatherRepository) {
         this.diaryRepository = diaryRepository;
@@ -47,6 +52,7 @@ public class DiaryService {
     }
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public void createDiary(LocalDate date, String text) {
+        logger.info("started to create Diary");
         // 날씨 데이터 가져외기
         DateWeather dateWeather = getDateWeather(date);
         // 우리 db에 저장하기
@@ -54,6 +60,7 @@ public class DiaryService {
         nowDiary.setDateWeather(dateWeather);
         nowDiary.setText(text);
         diaryRepository.save(nowDiary);
+        logger.info("end to create Dairy");
     }
 
     private DateWeather getDateWeather(LocalDate date) {

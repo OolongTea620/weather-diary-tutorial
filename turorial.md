@@ -50,4 +50,19 @@ JpaMemoRepository 구현
    키 생성 만을 위한 테이블을 만들어서 키 생성 관리
 
 
+## 캐싱 (Caching) 
+서버에서 미리 데이터를 저장해 놓는 행위
 
+## 로깅 (Logging)
+### loggin library
+
+- log4j -> log4h2 (보안 이슈 있었음)
+- logback
+
+### log level(로그레벨)
+
+1. Error :즉시 조치 필요 - DB 연결이 안되는 경우
+2. Warn :로직상 유효성 확인 시
+3. Info :참고할만한 중요 작업이 끝나는 경우
+4. Debug ()
+5. Trace ()

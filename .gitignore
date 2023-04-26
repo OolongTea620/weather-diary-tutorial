@@ -43,3 +43,6 @@ out/
 ## gradle
 !/gradlew.bat
 !/gradlew
+
+## logs
+logs
