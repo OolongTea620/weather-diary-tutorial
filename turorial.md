@@ -66,3 +66,11 @@ JpaMemoRepository 구현
 3. Info :참고할만한 중요 작업이 끝나는 경우
 4. Debug ()
 5. Trace ()
+
+## 예외 처리
+### Exception Handler
+`@Controller`, `@RestController`에서 발생한 예외를 하나의 메서드에서 처리해주는 기능
+
+ControllerAdvice
+
+    모든 Controller단을 대상으로 하여 예외가 발생한 것을 잡아줌
