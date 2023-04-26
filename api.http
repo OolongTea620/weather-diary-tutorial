@@ -7,3 +7,6 @@ POST http://localhost:8080/create/diary?date=2023-04-26
 Content-Type: text/plain
 
 오늘 프로그래밍 너무 재밌다아아
+
+### get weather diary by date
+GET http://localhost:8080/read/diary?date=2023-04-26
