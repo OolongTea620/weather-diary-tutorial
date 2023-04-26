@@ -1,0 +1,9 @@
+### api test response
+GET https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=6c6cd714b19f9588bf0e0d762056aa71
+Content-Type: application/json
+
+### write weather Text api
+POST http://localhost:8080/create/diary?date=2023-04-26
+Content-Type: text/plain
+
+오늘 프로그래밍 너무 재밌다아아

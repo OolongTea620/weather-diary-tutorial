@@ -27,7 +27,27 @@ DB와 연동된는 시스템을 빠르게 개발하고
    - 매칭 : DB테이블 <-> 객체
    - 단점 : 복잡한 쿼리를 자바 메서드만으로 해결하는 것이 불편함
 
-### JPA vs JDBC
+### JPA 
 
-|___JPA___|___JDBC___|   
-|장점| 단점 |
+JpaMemoRepository 구현
+
+#### @GerneratedValue 옵션 종류
+
+- GeneratedType.AUTO
+
+   상황에 맞춰서 알아서 자동적으로 해줘라?
+
+- GeneratedType.IDENTITY
+
+   SpringBoot에서 키 생성을 하지 않고 데이터 베이스에 넣어본 뒤, mysql이 만들어준 키 값이 있으면 그걸 가져옴.
+
+- GeneratedType.SEQUENCE
+
+   데이터베이스 오브젝트를 생성해서 키 생성
+
+- GeneratedType.TABLE
+   
+   키 생성 만을 위한 테이블을 만들어서 키 생성 관리
+
+
+
