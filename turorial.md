@@ -27,7 +27,50 @@ DB와 연동된는 시스템을 빠르게 개발하고
    - 매칭 : DB테이블 <-> 객체
    - 단점 : 복잡한 쿼리를 자바 메서드만으로 해결하는 것이 불편함
 
-### JPA vs JDBC
+### JPA 
 
-|___JPA___|___JDBC___|   
-|장점| 단점 |
+JpaMemoRepository 구현
+
+#### @GerneratedValue 옵션 종류
+
+- GeneratedType.AUTO
+
+   상황에 맞춰서 알아서 자동적으로 해줘라?
+
+- GeneratedType.IDENTITY
+
+   SpringBoot에서 키 생성을 하지 않고 데이터 베이스에 넣어본 뒤, mysql이 만들어준 키 값이 있으면 그걸 가져옴.
+
+- GeneratedType.SEQUENCE
+
+   데이터베이스 오브젝트를 생성해서 키 생성
+
+- GeneratedType.TABLE
+   
+   키 생성 만을 위한 테이블을 만들어서 키 생성 관리
+
+
+## 캐싱 (Caching) 
+서버에서 미리 데이터를 저장해 놓는 행위
+
+## 로깅 (Logging)
+### loggin library
+
+- log4j -> log4h2 (보안 이슈 있었음)
+- logback
+
+### log level(로그레벨)
+
+1. Error :즉시 조치 필요 - DB 연결이 안되는 경우
+2. Warn :로직상 유효성 확인 시
+3. Info :참고할만한 중요 작업이 끝나는 경우
+4. Debug ()
+5. Trace ()
+
+## 예외 처리
+### Exception Handler
+`@Controller`, `@RestController`에서 발생한 예외를 하나의 메서드에서 처리해주는 기능
+
+ControllerAdvice
+
+    모든 Controller단을 대상으로 하여 예외가 발생한 것을 잡아줌

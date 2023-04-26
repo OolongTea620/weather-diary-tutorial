@@ -40,4 +40,9 @@ out/
 *.properties
 *.yml
 
-## custom!/README.md
+## gradle
+!/gradlew.bat
+!/gradlew
+
+## logs
+logs
